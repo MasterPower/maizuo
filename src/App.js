@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './sass/public.css';
+import './sass/app.scss';
 class App extends Component {
   render() {
     return (
@@ -11,7 +13,7 @@ class App extends Component {
       	</header>
       </div>
     );
-  }
+  };
 }
 
 export default App;
