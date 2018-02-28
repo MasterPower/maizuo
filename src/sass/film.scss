@@ -1,0 +1,75 @@
+@import '~antd/dist/antd.css';
+#film{
+    flex: 1;
+    padding: 0 0.15rem;
+    margin-top: 0.5rem;
+    background: #f9f9f9;    
+    .ant-tabs-nav-wrap{
+        height: 0.46rem;
+        font-size: 16px;
+        color: orange;
+        border-bottom:1px solid orange;
+        font-weight: bold;
+        .ant-tabs-nav{
+            width: 100%;
+            .ant-tabs-tab{
+                width:45%;
+                text-align: center;
+            }
+            .ant-tabs-ink-bar{
+                background: orange;
+            }
+        }
+    }
+}
+.nowPlay{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: dashed 1px #c9c9c9;
+    cursor: pointer;
+    img{
+        width: 60px;
+        float: left;
+        overflow: hidden;
+    }
+    .nowPlay_mes{
+        padding-left: 15px;
+        display: inline-block;
+        width: 75%;
+        .nowPlay_name{
+            line-height: 32px;
+            color: #000;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            span{
+                font-size: 16px;
+            }
+            b{
+                float: right;
+                font-size: 16px;
+                line-height: 32px;
+                color: #fc7103;
+            }
+        } 
+        h3{
+            height: 0.12rem;
+            line-height: 0.12rem;
+            color: #8e8e8e;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            display: inline-block;
+        }
+        .palyNum{
+            line-height: 0.12rem;
+            color: #8e8e8e;
+            font-size: 12px;
+            span{
+
+            }
+        }
+    }
+}

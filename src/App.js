@@ -4,6 +4,7 @@ import './sass/app.scss';
 import './iconfont/iconfont.css';
 import $ from 'jquery';
 import Shouye from './Shouye';
+import Film from './Film';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -53,6 +54,7 @@ class App extends Component {
 	}
   render() {
     return (
+		<Router>
       <div className="App" onClick={this.fadeInMenu}>
       	<header>
       		<i className="iconfont icon-category index_nav" onClick={this.inputNav}></i>
@@ -62,8 +64,8 @@ class App extends Component {
       	</header>
       	<nav id="nav">
       		<ul>
-					<li className=""><a>首页<span className="iconfont">&#xe6a7;</span></a></li>
-					<li className=""><a>影片<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><Link to="/">首页<span className="iconfont">&#xe6a7;</span></Link></li>
+					<li className=""><Link to="/film">影片<span className="iconfont">&#xe6a7;</span></Link></li>
 					<li className=""><a>影院<span className="iconfont">&#xe6a7;</span></a></li>
 					<li className=""><a>商城<span className="iconfont">&#xe6a7;</span></a></li>
 					<li className=""><a>我的<span className="iconfont">&#xe6a7;</span></a></li>
@@ -71,8 +73,13 @@ class App extends Component {
       		</ul>
       	</nav>
 				<div id="mark"></div>
-				<Shouye/>
+				<div>
+					<Route exact path="/"component={Shouye}></Route>
+					<Route path="/film"component={Film}></Route>
+				</div>
+				
       </div>
+	  </Router>
     );
   };
 }
