@@ -2,33 +2,76 @@ import React, { Component } from 'react';
 import './sass/public.css';
 import './sass/app.scss';
 import './iconfont/iconfont.css';
+import $ from 'jquery';
+import Shouye from './Shouye';
+import {
+	BrowserRouter as Router,
+	Route,
+	Link
+} from 'react-router-dom';
 class App extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			navList:["首页","影片","影院","商城","我的","卖座卡"]
+			offNo:false
 		}
+		this.inputNav=this.inputNav.bind(this);
+		this.fadeInMenu=this.fadeInMenu.bind(this);
+	}
+	inputNav(){
+		if(!this.state.offNo){
+			$("#nav").stop().animate({
+				"left":"0",
+				"right":"1.1rem"
+			},250);
+			$("#mark").css("display","block");
+		}else{
+			$("#nav").stop().animate({
+				"left":"-3rem",
+				"right":"4.1rem"
+			});
+			$("#mark").css("display","none");
+		}
+		this.setState({
+			offNo:!this.state.offNo
+		})
+	}
+	fadeInMenu(){
+		// var App=document.getElementById("App");
+		// App.addEventListener("click",function(event){
+		// 	var target=event.target;
+		// 	if(target.id!=="nav"){
+		// 		$("#nav").stop().animate({
+		// 			"left":"-3rem",
+		// 			"right":"4.1rem"
+		// 		});
+		// 	}
+		// 	this.setState({
+		// 		offNo:!this.state.offNo
+		// 	})
+		// })
 	}
   render() {
     return (
-      <div className="App">
+      <div className="App" onClick={this.fadeInMenu}>
       	<header>
-      		<i className="iconfont icon-category index_nav"></i>
+      		<i className="iconfont icon-category index_nav" onClick={this.inputNav}></i>
       		<a className="appName">卖座电影</a>
       		<b className="user iconfont icon-account"></b>
       		<span className="location iconfont">北京 &#xe6a6;</span>
       	</header>
-      	<nav>
+      	<nav id="nav">
       		<ul>
-      			{
-      				this.state.navList.map((item,index)=>{
-      					return(
-      						<li className="" key={index}><a>{item}<span className="iconfont">&#xe6a7;</span></a></li>
-      					)
-      				})
-      			}
+					<li className=""><a>首页<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><a>影片<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><a>影院<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><a>商城<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><a>我的<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><a>卖座卡<span className="iconfont">&#xe6a7;</span></a></li>
       		</ul>
       	</nav>
+				<div id="mark"></div>
+				<Shouye/>
       </div>
     );
   };

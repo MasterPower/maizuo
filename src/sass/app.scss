@@ -11,6 +11,7 @@
         line-height: 0.5rem;
         text-align: center;
         z-index: 999;
+        position: fixed;
         .index_nav{
             width: 0.48rem;
             height: 0.50rem;
@@ -45,12 +46,13 @@
         border-top: 1px solid #222;
         box-shadow: 0 1px 1px #363636 inset;
         background: #282828;
-        position: absolute;
+        position: fixed;
         display: block;
-        top: 0;
-        right: 110px;
+        top: 0.5rem;
+        right: 4.1rem;
         bottom: 0;
-        left: 0;
+        left: -3rem;
+        z-index: 888;
         ul{
             border-top: 1px solid #222;
             height: 100%;
@@ -70,5 +72,14 @@
                 }
             }
         }
+    }
+    #mark{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
     }
 }
