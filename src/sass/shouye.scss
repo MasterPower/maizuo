@@ -1,3 +1,20 @@
+@import '~antd/dist/antd.css';
+.ant-carousel .slick-slide {
+    width: 100%;
+    line-height: 2.1rem;
+    overflow: hidden;
+    margin-bottom: 0.17rem;
+    z-index: 9;
+    img{
+        width: 100%;
+        z-index: 9;
+    }
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+
 .Shouye{
     flex: 1;
     background: #e1e1e1;

@@ -12,6 +12,7 @@
         text-align: center;
         z-index: 999;
         position: fixed;
+        color: #999;
         .index_nav{
             width: 0.48rem;
             height: 0.50rem;
@@ -64,6 +65,7 @@
                     width: 100%;
                     padding: 0 16px;
                     border-bottom: 1px dotted #333;
+                    color: #999;
                     span{
                         float: right;
                         width: 0.14rem;

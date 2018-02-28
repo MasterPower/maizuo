@@ -3,14 +3,17 @@ import './sass/shouye.scss';
 import './sass/public.css';
 import $ from 'jquery';
 import axios from 'axios';
+import { Carousel } from 'antd';
 class Shouye extends Component{
     constructor(props){
 		super(props);
 		this.state={
             films:[],
-            films2:[]
-		}
-	}
+            films2:[],
+            lunbo:[]
+        }
+    }
+
     componentDidMount(){
 		axios.get("/v4/api/film/now-playing?__t=1519610967079&page=1&count=5")
 		.then((res)=>{
@@ -24,11 +27,28 @@ class Shouye extends Component{
 				films2:res.data.data.films
 			})
 			console.log(this.state.films2);
+        })
+        axios.get("/v4/api/billboard/home?__t=1519786115413")
+		.then((res)=>{
+            console.log(res)
+			this.setState({
+				 lunbo:res.data.data.billboards
+			})
+			console.log(this.state.lunbo);
 		})
 	}
     render() {
         return (
             <div className="Shouye">
+                <Carousel autoplay dots="false">
+                    {
+                        this.state.lunbo.map((item,index)=>{
+                            return(
+                                <div key={item.id}><img src={item.imageUrl}/></div> 
+                            )
+                        })
+                    }
+                </Carousel>
                 <div id="nowPlay">
                     <ul>
                         {this.state.films.map((item,index)=>{
