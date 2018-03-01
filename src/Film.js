@@ -16,7 +16,7 @@ class Film extends Component{
             id2:1
         }
     }
-    componentDidMount(){
+    componentWillMount(){
         window.onscroll=function(){
 
         }
@@ -43,7 +43,7 @@ class Film extends Component{
                         {
                             this.state.onStart.map((item,index)=>{
                                 return(
-                                    <div className="nowPlay">
+                                    <div className="nowPlay" key={item.id}>
                                         <img src={item.poster.origin}/>
                                         <div className="nowPlay_mes">
                                         <p className="nowPlay_name"><span>{item.name}</span><b className="iconfont">{item.grade} &#xe6a7;</b></p>
@@ -60,7 +60,7 @@ class Film extends Component{
                         {
                             this.state.willStart.map((item,index)=>{
                                 return(
-                                    <div className="nowPlay">
+                                    <div className="nowPlay" key={item.id}>
                                         <img src={item.poster.origin}/>
                                         <div className="nowPlay_mes">
                                         <p className="nowPlay_name"><span>{item.name}</span></p>

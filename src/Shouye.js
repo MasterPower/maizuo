@@ -4,6 +4,11 @@ import './sass/public.css';
 import $ from 'jquery';
 import axios from 'axios';
 import { Carousel } from 'antd';
+import {
+	BrowserRouter as Router,
+	Route,
+	Link
+} from 'react-router-dom';
 class Shouye extends Component{
     constructor(props){
 		super(props);
@@ -14,7 +19,7 @@ class Shouye extends Component{
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
 		axios.get("/v4/api/film/now-playing?__t=1519610967079&page=1&count=5")
 		.then((res)=>{
 			this.setState({
@@ -54,14 +59,16 @@ class Shouye extends Component{
                         {this.state.films.map((item,index)=>{
                             return(
                                 <li key={item.id}>
-                                    <div className="now_img">
-                                        <img src={item.cover.origin} />
-                                    </div>
-                                    <div className="now_mes">
-                                        <h3>{item.name}</h3>
-                                        <p>{item.cinemaCount}家影院上映 {item.watchCount}人购票</p>
-                                        <span>{item.grade}</span>  
-                                    </div>
+                                    <Link to={"/xiangqing/"+item.id}>
+                                        <div className="now_img">
+                                            <img src={item.cover.origin} />
+                                        </div>
+                                        <div className="now_mes">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.cinemaCount}家影院上映 {item.watchCount}人购票</p>
+                                            <span>{item.grade}</span>  
+                                        </div>
+                                    </Link>
                                 </li>
                             )
                         })}

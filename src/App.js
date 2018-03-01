@@ -5,6 +5,7 @@ import './iconfont/iconfont.css';
 import $ from 'jquery';
 import Shouye from './Shouye';
 import Film from './Film';
+import Xq from './Xq';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -76,6 +77,7 @@ class App extends Component {
 				<div>
 					<Route exact path="/"component={Shouye}></Route>
 					<Route path="/film"component={Film}></Route>
+					<Route path="/xiangqing/:id"component={Xq}></Route>
 				</div>
 				
       </div>
