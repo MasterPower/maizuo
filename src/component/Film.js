@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Tabs } from 'antd';
-import './sass/public.css';
-import './iconfont/iconfont.css';
-import './sass/film.scss';
+import '../sass/public.css'
+import '../iconfont/iconfont.css';
+import '../sass/film.scss';
 const TabPane = Tabs.TabPane;
 
 class Film extends Component{

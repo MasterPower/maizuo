@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './sass/Xq.scss';
-import './sass/public.css';
+import '../sass/Xq.scss';
+import '../sass/public.css';
 import axios from 'axios';
 
 
@@ -34,15 +34,15 @@ export default class Xq extends Component{
         return(
             <div id="xiangqing">
                  <img src={this.state.img}/>
-                 <div>
-                     <p className><span></span>影片简介</p>
+                 <div className="film_xq">
+                     <p className="jianjie">影片简介</p>
                      <p><span>导演</span>:{this.state.film.director}</p>
                      <p><span>主演</span>:{this.state.star}</p>
                      <p><span>地区语言</span>:{this.state.film.nation}({this.state.film.language})</p>
                      <p><span>类型</span>:{this.state.film.category}</p>
                      <p><span>上映日期</span>:12月8日</p>
                  </div>
-                 <p>{this.state.film.synopsis}</p>
+                 <p className="qingjie">{this.state.film.synopsis}</p>
             </div>
         )
     }

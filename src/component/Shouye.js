@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './sass/shouye.scss';
-import './sass/public.css';
+import '../sass/shouye.scss';
+import '../sass/public.css';
 import $ from 'jquery';
 import axios from 'axios';
 import { Carousel } from 'antd';
