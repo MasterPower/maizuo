@@ -39,7 +39,7 @@ export default class Cinema extends Component{
         this.setState({
           theme: value ? 'dark' : 'light',
         });
-      }
+      } 
     handleClick = (e) => {
         this.setState({
           current: e.key,

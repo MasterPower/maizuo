@@ -7,6 +7,7 @@ import Shouye from './component/Shouye';
 import Film from './component/Film';
 import Xq from './component/Xq';
 import cinema from './component/Cinema';
+import Log from './component/Log';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -71,7 +72,7 @@ class App extends Component {
 					<li className=""><Link to="/film">影片<span className="iconfont">&#xe6a7;</span></Link></li>
 					<li className=""><Link to="/cinema">影院<span className="iconfont">&#xe6a7;</span></Link></li>
 					<li className=""><a>商城<span className="iconfont">&#xe6a7;</span></a></li>
-					<li className=""><a>我的<span className="iconfont">&#xe6a7;</span></a></li>
+					<li className=""><Link to="/log">我的<span className="iconfont">&#xe6a7;</span></Link></li>
 					<li className=""><a>卖座卡<span className="iconfont">&#xe6a7;</span></a></li>
       		</ul>
       	</nav>
@@ -81,6 +82,8 @@ class App extends Component {
 					<Route path="/film"component={Film}></Route>
 					<Route path="/xiangqing/:id"component={Xq}></Route>
 					<Route path="/cinema"component={Cinema}></Route>
+					<Route path="/log"component={Log}></Route>
+					
 				</div>
 				
       </div>
